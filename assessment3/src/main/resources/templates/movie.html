@@ -1,0 +1,30 @@
+<html>
+<head><title>Movies</title></head>
+<body>
+<center>
+	<h2>Movie List</h2>
+	<table border="1">
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Genre</th>
+			<th>Director</th>
+			<th>Release Year</th>
+			<th>Rating</th>
+		</tr>
+		<tr th:each="m :${movies}">
+			<td th:text="${m.id}"></td>
+			<td th:text="${m.title}"></td>
+			<td th:text="${m.genre}"></td>
+			<td th:text="${m.director}"></td>
+			<td th:text="${m.releaseYear}"></td>
+			<td th:text="${m.rating}"></td>
+			<td>
+				<a th:href="@{/updateMovie/{id}(id=${m.id})}">Edit</a>
+				<a th:href="@{/deleteMovie/{id}(id=${m.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+			</td>
+		</tr>
+	</table>
+</center>
+</body>
+</html>

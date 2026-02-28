@@ -1,0 +1,22 @@
+<html>
+<head><title>Add Movie</title></head>
+<body>
+
+<h2>Add new movie</h2>
+<form th:action="@{/saveMovie}" th:object="${movie}" method="post">
+	<input type="hidden" th:field="*{id}"/>
+	<label>Title:</label>
+	<input type="text" th:field="*{title}"/><br><br>
+	<label>Genre:</label>
+	<input type="text" th:field="*{genre}"/><br><br>
+	<label>Director:</label>
+	<input type="text" th:field="*{director}"/><br><br>
+	<label>Year of release:</label>
+	<input type="number" th:field="*{releaseYear}"/><br><br>
+	<label>Rating:</label>
+	<input type="number" step="0.1" th:field="*{rating}"/><br><br>
+
+	<button type="submit">Save Movie</button>
+</form>
+</body>
+</html>
